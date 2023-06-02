@@ -40,7 +40,7 @@ function Register() {
   function handleRequest() {
     console.log("sending");
     axios
-      .post("http://localhost:3001/users/register", values)
+      .post("https://neistagram-disconnect-app.onrender.com/register", values)
       .then((res) => {
         console.log(res);
         if (res.data === "Taken") {

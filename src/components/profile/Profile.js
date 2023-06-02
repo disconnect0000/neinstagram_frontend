@@ -35,7 +35,7 @@ function Profile() {
       postDesc: values.postDesc,
       username: username,
     };
-    axios.post("http://localhost:3001/upload", reqValues).then((res) => {});
+    axios.post("https://neistagram-disconnect-app.onrender.com/upload", reqValues).then((res) => {});
   }
 
   return (

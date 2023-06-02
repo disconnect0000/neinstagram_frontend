@@ -13,13 +13,17 @@ function User() {
     return () => getUserPost();
   }, [
     axios
-      .post("http://localhost:3001/user", { username: username })
+      .post("https://neistagram-disconnect-app.onrender.com/user", {
+        username: username,
+      })
       .then((res) => {}),
   ]);
 
   function handleDeletePost(postId) {
     axios
-      .post("http://localhost:3001/delete", { postId: postId })
+      .post("https://neistagram-disconnect-app.onrender.com/delete", {
+        postId: postId,
+      })
       .then((res) => {
         getUserPost();
       });
@@ -27,7 +31,9 @@ function User() {
 
   function getUserPost() {
     axios
-      .post("http://localhost:3001/user", { username: username })
+      .post("https://neistagram-disconnect-app.onrender.com/user", {
+        username: username,
+      })
       .then((res) => {
         setUserPosts(
           res.data.reverse().map((post) => (

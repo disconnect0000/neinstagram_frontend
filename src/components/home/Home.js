@@ -10,13 +10,13 @@ function Home() {
     return () => {
       getPosts();
     };
-  }, [axios.get("http://localhost:3001/upload").then((res) => {})]);
+  }, [axios.get("https://neistagram-disconnect-app.onrender.com/upload").then((res) => {})]);
 
   const username = localStorage.getItem("usernameMYwebsite");
 
   function handleDeletePost(postId) {
     axios
-      .post("http://localhost:3001/delete", { postId: postId })
+      .post("https://neistagram-disconnect-app.onrender.com/delete", { postId: postId })
       .then((res) => {
         getPosts();
       });
@@ -24,7 +24,7 @@ function Home() {
 
   const getPosts = () => {
     axios
-      .get("http://localhost:3001/upload")
+      .get("https://neistagram-disconnect-app.onrender.com/upload")
       .then((res) => {
         Promise.all([res.data]).then((res) => {
           setPosts(
